@@ -7,12 +7,12 @@
 [node name="Level" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(573, 326)
-scale = Vector2(0.3, 0.3)
+position = Vector2(950, 533)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_oi3di")
 
 [node name="Player" parent="." instance=ExtResource("2_0b4ue")]
-position = Vector2(600, 550)
+position = Vector2(978, 951)
 scale = Vector2(0.9, 0.9)
 
 [node name="DirtMeteor" parent="." instance=ExtResource("3_f2txt")]

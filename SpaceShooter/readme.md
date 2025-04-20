@@ -1,1 +1,0 @@
-Tutorial at ["Godot 4 Crash Course #1 - The Basics" by "Net Ninja"](https://www.youtube.com/watch?v=q7wlSvt0JIc&list=PL4cUxeGkcC9iHCXBpxbdsOByZ55Ez4bgF).
