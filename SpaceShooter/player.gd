@@ -1,40 +1,46 @@
-extends Node2D
+extends CharacterBody2D
 
-var screen_height:int = 1920; #px
-var screen_width:int  = 1080; #px
-@export var acceleration:float = 12.5; #(px/s)/s
+var screen_width:int  = 1920; #px
+var screen_height:int = 1080; #px
+@export var acceleration:float = 20; #(px/s)/s
 @export var relectionFrictionConstant:float = 0.25;
-var motion:Vector2 = Vector2(0,0); # (px/s, px/s)
+var motion:Vector2 = Vector2.ZERO; # (px/s, px/s)
 
-var half_width;
+#var north_bound:int = 0;
+#var east_bound:int  = 0;
+#var south_bound:int = 0;
+#var west_bound:int  = 0;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	position = Vector2(
-		screen_height* 1/2,
-		screen_width * 7/8
+		screen_width  * 1.0/2.0,
+		screen_height * 7.0/8.0
 	);
-	half_width = $Sprite.texture.get_width()/2;
 
+	#var boundingBox:Rect2 = Rect2();
+	#var point:Vector2 = Vector2.ZERO;
+	#for index:int in $CollisionPolygon2D.polygon.size():
+		#point = $CollisionPolygon2D.polygon.get(index);
+		#boundingBox = boundingBox.expand(point);
+	#
+	#west_bound  = -boundingBox.size.x/2 + boundingBox.get_center().x;
+	#east_bound  = +boundingBox.size.x/2 + boundingBox.get_center().x;
+	#north_bound = +boundingBox.size.y/2 + boundingBox.get_center().y;
+	#south_bound = -boundingBox.size.y/2 + boundingBox.get_center().y;
+	#
+	#print(north_bound," ", east_bound," ", south_bound," ", west_bound)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta:float) -> void:
 	# Move player
-	if Input.is_action_pressed("move_right"):
-		motion += delta*Vector2(acceleration,0);
+	if Input.is_action_pressed("move_up"):
+		velocity += Vector2(0,-acceleration);
+	if Input.is_action_pressed("move_down"):
+		velocity += Vector2(0,acceleration);
 	if Input.is_action_pressed("move_left"):
-		motion += delta*Vector2(-acceleration,0);
-	$Sprite.position += motion;
+		velocity += Vector2(-acceleration,0);
+	if Input.is_action_pressed("move_right"):
+		velocity += Vector2(acceleration,0);
 
-	# Sanitize position
-	var reflectMotion = false;
-	if $Sprite.position.x < -screen_width + half_width:
-		$Sprite.position.x = -screen_width + half_width;
-		reflectMotion = true;
-	if screen_width - half_width < $Sprite.position.x:
-		$Sprite.position.x = screen_width - half_width;
-		reflectMotion = true;
-
-	# Sanitize motion
-	if reflectMotion:
-		motion *= -1*relectionFrictionConstant;
+	move_and_slide();
