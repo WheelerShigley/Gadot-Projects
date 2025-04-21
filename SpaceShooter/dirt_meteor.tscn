@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://datddbo7st4or" path="res://graphics/dirt_meteor.png" id="1_k8twj"]
 
 [node name="DirtMeteor" type="Area2D"]
+collision_layer = 2
+collision_mask = 7
 script = ExtResource("1_35km7")
 
 [node name="Sprite" type="Sprite2D" parent="."]

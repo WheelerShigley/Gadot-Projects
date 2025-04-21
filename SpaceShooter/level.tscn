@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbkg77gh6kyws"]
+[gd_scene load_steps=7 format=3 uid="uid://bbkg77gh6kyws"]
 
 [ext_resource type="Texture2D" uid="uid://bpq6tr7wf5jam" path="res://graphics/space_background.png" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cfw7shnmrp2ex" path="res://player.tscn" id="2_0b4ue"]
-[ext_resource type="PackedScene" uid="uid://b0y5b4a10ej6y" path="res://dirt_meteor.tscn" id="3_f2txt"]
 [ext_resource type="PackedScene" uid="uid://dt6hdb1noqjck" path="res://laser.tscn" id="4_0b4ue"]
-[ext_resource type="Script" uid="uid://dftyn6reluktu" path="res://timer.gd" id="5_f2txt"]
+[ext_resource type="Script" uid="uid://dftyn6reluktu" path="res://meteor_spawning_timer.gd" id="5_f2txt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3di"]
 size = Vector2(20, 1080)
@@ -23,12 +22,10 @@ texture = ExtResource("1_oi3di")
 position = Vector2(978, 951)
 scale = Vector2(0.9, 0.9)
 
-[node name="DirtMeteor" parent="." instance=ExtResource("3_f2txt")]
-position = Vector2(465, 220)
-
 [node name="Laser" parent="." instance=ExtResource("4_0b4ue")]
 
 [node name="Border" type="StaticBody2D" parent="."]
+collision_layer = 8
 
 [node name="Left" type="CollisionShape2D" parent="Border"]
 position = Vector2(-10, 540)
@@ -46,8 +43,11 @@ shape = SubResource("RectangleShape2D_0b4ue")
 position = Vector2(960, 1090)
 shape = SubResource("RectangleShape2D_0b4ue")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="MeteorSpawningTimer" type="Timer" parent="."]
+wait_time = 0.3
 autostart = true
 script = ExtResource("5_f2txt")
 
-[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]
+[node name="Meteors" type="Node2D" parent="."]
+
+[connection signal="timeout" from="MeteorSpawningTimer" to="MeteorSpawningTimer" method="_on_timeout"]

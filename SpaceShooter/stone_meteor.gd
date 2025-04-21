@@ -1,8 +1,8 @@
 extends Area2D
 
 var random:RandomNumberGenerator = RandomNumberGenerator.new();
-@export var speed = 50; #px/s
-@export var angular_velocity = 0.2; #r/s
+@export var speed = 20; #px/s
+@export var angular_velocity = 0.25; #r/s
 
 func _ready() -> void:
 	var width = get_viewport().get_visible_rect().size.x;
@@ -20,6 +20,3 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	rotation += angular_velocity * delta;
 	position += Vector2(0, speed) * delta;
-
-func _on_body_entered(body: Node2D) -> void:
-	print("collision");

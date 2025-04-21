@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfmgbsc4oru30"]
+
+[ext_resource type="Texture2D" uid="uid://csh2s3ok4jtpj" path="res://graphics/ice_meteor.png" id="1_pwvtn"]
+[ext_resource type="Script" uid="uid://jnfei3bj1f8y" path="res://ice_meteor.gd" id="2_qrg8m"]
+
+[node name="IceMeteor" type="Area2D"]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("2_qrg8m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pwvtn")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -29, -5, -28, -13, -17, -21, -16, -27, -3, -27, 1, -23, 7, -23, 17, -19, 21, -13, 23, -11, 22, -8, 22, -2, 28, 2, 28, 8, 25, 15, 25, 20, 23, 21, 20, 21, 13, 27, 7, 27, 0, 24, -7, 18, -10, 18, -19, 11, -25)

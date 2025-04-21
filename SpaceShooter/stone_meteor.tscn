@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7rqq08g16c2s"]
+
+[ext_resource type="Texture2D" uid="uid://dxpn5wpbb3vky" path="res://graphics/stone_meteor.png" id="1_a5jbi"]
+[ext_resource type="Script" uid="uid://dgaewu8nxnln7" path="res://stone_meteor.gd" id="2_lj6ie"]
+
+[node name="StoneMeteor" type="Area2D"]
+collision_layer = 2
+collision_mask = 7
+script = ExtResource("2_lj6ie")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_a5jbi")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(8, -31, 3, -29, -2, -26, -5, -22, -16, -16, -25, -8, -28, 1, -28, 6, -26, 10, -26, 19, -27, 22, -26, 24, -21, 28, -13, 32, 2, 32, 11, 29, 14, 26, 14, 24, 19, 17, 20, 11, 25, 8, 28, -6, 28, -11, 31, -18, 28, -23, 24, -28, 17, -31)
+
+[connection signal="body_entered" from="." to="CollisionPolygon2D" method="_on_stone_meteor_body_entered"]
