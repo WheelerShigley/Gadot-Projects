@@ -6,6 +6,9 @@ var screen_height:int = 1080; #px
 @export var relectionFrictionConstant:float = 0.25;
 var motion:Vector2 = Vector2.ZERO; # (px/s, px/s)
 
+var shot_available:bool = true;
+signal shoot(position:Vector2);
+
 #var north_bound:int = 0;
 #var east_bound:int  = 0;
 #var south_bound:int = 0;
@@ -32,8 +35,7 @@ func _ready() -> void:
 	#print(north_bound," ", east_bound," ", south_bound," ", west_bound)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta:float) -> void:
-	# Move player
+func _process(delta:float) -> void:
 	if Input.is_action_pressed("move_up"):
 		velocity += Vector2(0,-acceleration);
 	if Input.is_action_pressed("move_down"):
@@ -42,5 +44,14 @@ func _process(_delta:float) -> void:
 		velocity += Vector2(-acceleration,0);
 	if Input.is_action_pressed("move_right"):
 		velocity += Vector2(acceleration,0);
-
 	move_and_slide();
+	
+	if Input.is_action_pressed("shoot") and shot_available:
+		shoot.emit(position + $WeaponSystems/leftWeaponPosition.position);
+		shoot.emit(position + $WeaponSystems/rightWeaponPosition.position);
+
+		shot_available = false;
+		$WeaponSystems/WeaponCooldownTimer.start();
+
+func _on_weapon_cooldown_timer_timeout() -> void:
+	shot_available = true;

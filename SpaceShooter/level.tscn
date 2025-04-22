@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bbkg77gh6kyws"]
 
+[ext_resource type="Script" uid="uid://dy8ca6ui1kbum" path="res://level.gd" id="1_0b4ue"]
 [ext_resource type="Texture2D" uid="uid://bpq6tr7wf5jam" path="res://graphics/space_background.png" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cfw7shnmrp2ex" path="res://player.tscn" id="2_0b4ue"]
-[ext_resource type="PackedScene" uid="uid://dt6hdb1noqjck" path="res://laser.tscn" id="4_0b4ue"]
 [ext_resource type="Script" uid="uid://dftyn6reluktu" path="res://meteor_spawning_timer.gd" id="5_f2txt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3di"]
@@ -12,6 +12,7 @@ size = Vector2(20, 1080)
 size = Vector2(1960, 20)
 
 [node name="Level" type="Node2D"]
+script = ExtResource("1_0b4ue")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(950, 533)
@@ -21,8 +22,6 @@ texture = ExtResource("1_oi3di")
 [node name="Player" parent="." instance=ExtResource("2_0b4ue")]
 position = Vector2(978, 951)
 scale = Vector2(0.9, 0.9)
-
-[node name="Laser" parent="." instance=ExtResource("4_0b4ue")]
 
 [node name="Border" type="StaticBody2D" parent="."]
 collision_layer = 8
@@ -50,4 +49,7 @@ script = ExtResource("5_f2txt")
 
 [node name="Meteors" type="Node2D" parent="."]
 
+[node name="Lasers" type="Node2D" parent="."]
+
+[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
 [connection signal="timeout" from="MeteorSpawningTimer" to="MeteorSpawningTimer" method="_on_timeout"]
