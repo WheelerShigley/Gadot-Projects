@@ -9,7 +9,7 @@ func _ready() -> void:
 	var randomX = random.randi_range(0, width);
 	var randomY = random.randi_range(-100,-200);
 	var randomS = random.randf_range(1-0.2,1+0.2);
-	var randomV = random.randf_range(speed/2,2*speed);
+	var randomV = random.randf_range(speed/2.0,2.0*speed);
 	var randomW = random.randf_range(-angular_velocity,angular_velocity);
 	
 	scale = Vector2(randomS, randomS);

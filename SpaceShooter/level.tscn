@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://bbkg77gh6kyws"]
 
 [ext_resource type="Script" uid="uid://dy8ca6ui1kbum" path="res://level.gd" id="1_0b4ue"]
-[ext_resource type="Texture2D" uid="uid://bpq6tr7wf5jam" path="res://graphics/space_background.png" id="1_oi3di"]
 [ext_resource type="PackedScene" uid="uid://cfw7shnmrp2ex" path="res://player.tscn" id="2_0b4ue"]
+[ext_resource type="Texture2D" uid="uid://bpq6tr7wf5jam" path="res://graphics/background/space_background.png" id="2_f2txt"]
 [ext_resource type="Script" uid="uid://dftyn6reluktu" path="res://meteor_spawning_timer.gd" id="5_f2txt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oi3di"]
@@ -14,10 +14,14 @@ size = Vector2(1960, 20)
 [node name="Level" type="Node2D"]
 script = ExtResource("1_0b4ue")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 position = Vector2(950, 533)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_oi3di")
+texture = ExtResource("2_f2txt")
+
+[node name="Stars" type="Node2D" parent="Background"]
+position = Vector2(-1900, -1066)
+scale = Vector2(2, 2)
 
 [node name="Player" parent="." instance=ExtResource("2_0b4ue")]
 position = Vector2(978, 951)

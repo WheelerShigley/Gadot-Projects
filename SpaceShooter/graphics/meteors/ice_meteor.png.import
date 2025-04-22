@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0t4p6u50g76u"
-path="res://.godot/imported/ship.png-e398fa390058251cc1af127a02bfbb4d.ctex"
+uid="uid://csh2s3ok4jtpj"
+path="res://.godot/imported/ice_meteor.png-113c0aaff4daa7bf9dca917f47b63979.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/ship.png"
-dest_files=["res://.godot/imported/ship.png-e398fa390058251cc1af127a02bfbb4d.ctex"]
+source_file="res://graphics/meteors/ice_meteor.png"
+dest_files=["res://.godot/imported/ice_meteor.png-113c0aaff4daa7bf9dca917f47b63979.ctex"]
 
 [params]
 

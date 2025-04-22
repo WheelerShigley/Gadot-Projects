@@ -35,7 +35,7 @@ func _ready() -> void:
 	#print(north_bound," ", east_bound," ", south_bound," ", west_bound)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta:float) -> void:
+func _process(_delta:float) -> void:
 	if Input.is_action_pressed("move_up"):
 		velocity += Vector2(0,-acceleration);
 	if Input.is_action_pressed("move_down"):

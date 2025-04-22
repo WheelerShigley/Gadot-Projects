@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://datddbo7st4or"
-path="res://.godot/imported/dirt_meteor.png-5aaeff9947b7cdbf2d1e0df9e6519e82.ctex"
+uid="uid://2q30tauaiv2"
+path="res://.godot/imported/laser.png-ae622fd17f0d9db9cc774872eb971660.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/dirt_meteor.png"
-dest_files=["res://.godot/imported/dirt_meteor.png-5aaeff9947b7cdbf2d1e0df9e6519e82.ctex"]
+source_file="res://graphics/ship/laser.png"
+dest_files=["res://.godot/imported/laser.png-ae622fd17f0d9db9cc774872eb971660.ctex"]
 
 [params]
 

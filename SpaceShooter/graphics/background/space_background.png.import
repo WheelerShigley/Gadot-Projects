@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csh2s3ok4jtpj"
-path="res://.godot/imported/ice_meteor.png-f8ea5c8fbc2cab2680dd4f325a114fad.ctex"
+uid="uid://bpq6tr7wf5jam"
+path="res://.godot/imported/space_background.png-fcce72abc34852af07a3216c0e17b3cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/ice_meteor.png"
-dest_files=["res://.godot/imported/ice_meteor.png-f8ea5c8fbc2cab2680dd4f325a114fad.ctex"]
+source_file="res://graphics/background/space_background.png"
+dest_files=["res://.godot/imported/space_background.png-fcce72abc34852af07a3216c0e17b3cc.ctex"]
 
 [params]
 

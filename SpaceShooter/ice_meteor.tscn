@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfmgbsc4oru30"]
 
-[ext_resource type="Texture2D" uid="uid://csh2s3ok4jtpj" path="res://graphics/ice_meteor.png" id="1_pwvtn"]
+[ext_resource type="Texture2D" uid="uid://csh2s3ok4jtpj" path="res://graphics/meteors/ice_meteor.png" id="1_pwvtn"]
 [ext_resource type="Script" uid="uid://jnfei3bj1f8y" path="res://ice_meteor.gd" id="2_qrg8m"]
 
 [node name="IceMeteor" type="Area2D"]
