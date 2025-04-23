@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c7rqq08g16c2s"]
 
-[ext_resource type="Texture2D" uid="uid://dxpn5wpbb3vky" path="res://graphics/stone_meteor.png" id="1_a5jbi"]
-[ext_resource type="Script" uid="uid://dgaewu8nxnln7" path="res://stone_meteor.gd" id="2_lj6ie"]
+[ext_resource type="Texture2D" uid="uid://dxpn5wpbb3vky" path="res://graphics/meteors/stone_meteor.png" id="1_a5jbi"]
+[ext_resource type="Script" uid="uid://dgaewu8nxnln7" path="res://scenes/stone_meteor.gd" id="2_lj6ie"]
 
 [node name="StoneMeteor" type="Area2D"]
 collision_layer = 2

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b0y5b4a10ej6y"]
 
-[ext_resource type="Script" uid="uid://c2hs4w3l8d42o" path="res://dirt_meteor.gd" id="1_35km7"]
+[ext_resource type="Script" uid="uid://c2hs4w3l8d42o" path="res://scenes/dirt_meteor.gd" id="1_35km7"]
 [ext_resource type="Texture2D" uid="uid://datddbo7st4or" path="res://graphics/meteors/dirt_meteor.png" id="1_k8twj"]
 
 [node name="DirtMeteor" type="Area2D"]

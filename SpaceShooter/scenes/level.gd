@@ -1,7 +1,7 @@
 extends Node2D
 
-var laser:PackedScene = load("res://laser.tscn");
-var star:PackedScene = load("res://star.tscn");
+var laser:PackedScene = load("res://scenes/laser.tscn");
+var star:PackedScene = load("res://scenes/star.tscn");
 
 func _ready() -> void:
 	for n in 100:

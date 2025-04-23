@@ -2,9 +2,9 @@ extends Timer
 
 var random:RandomNumberGenerator = RandomNumberGenerator.new();
 
-var dirtMeteor:PackedScene  = load("res://dirt_meteor.tscn" );
-var stoneMeteor:PackedScene = load("res://stone_meteor.tscn");
-var iceMeteor:PackedScene   = load("res://ice_meteor.tscn"  );
+var dirtMeteor:PackedScene  = load("res://scenes/dirt_meteor.tscn" );
+var stoneMeteor:PackedScene = load("res://scenes/stone_meteor.tscn");
+var iceMeteor:PackedScene   = load("res://scenes/ice_meteor.tscn"  );
 
 func _on_timeout() -> void:
 	var newMeteor;

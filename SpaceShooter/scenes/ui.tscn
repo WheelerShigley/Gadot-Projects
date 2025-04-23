@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://br5iblmk1ty1o"]
+
+[ext_resource type="FontFile" uid="uid://dt6ptyjnepwbd" path="res://graphics/fonts/SPACERR-Regular.ttf" id="1_x4jx1"]
+[ext_resource type="Texture2D" uid="uid://b0t4p6u50g76u" path="res://graphics/ship/ship.png" id="2_yev5y"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="ScoreMargin" type="MarginContainer" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -77.0
+offset_right = 77.0
+offset_bottom = 48.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+metadata/_edit_lock_ = true
+
+[node name="test" type="Label" parent="ScoreMargin"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_x4jx1")
+theme_override_font_sizes/font_size = 64
+text = "test"
+
+[node name="LivesMargin" type="MarginContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+scale = Vector2(0.67, 0.67)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+metadata/_edit_lock_ = true
+
+[node name="LivesContainer" type="HBoxContainer" parent="LivesMargin"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="LivesMargin/LivesContainer"]
+layout_mode = 2
+texture = ExtResource("2_yev5y")
+expand_mode = 3

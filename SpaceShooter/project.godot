@@ -13,7 +13,6 @@ config_version=5
 config/name="SpaceShooter"
 run/main_scene="uid://bbkg77gh6kyws"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
 
 [display]
 
